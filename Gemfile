@@ -10,6 +10,7 @@ gem "puma", "~> 3.11"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "devise_token_auth"
 gem "fast_jsonapi"
+gem "stripe-rails"
 
 group :development, :test do
   gem "awesome_print"
@@ -17,6 +18,7 @@ group :development, :test do
   gem "faker"
   gem "pry-byebug"
   gem "rspec-rails", '~> 3.7'
+  gem "dotenv-rails"
 end
 
 group :development do
