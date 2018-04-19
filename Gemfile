@@ -11,13 +11,18 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "devise_token_auth"
 gem "fast_jsonapi"
 gem "stripe-rails"
+gem "paperclip"
+gem "aws-sdk", "< 3.0"
+gem "administrate", github: "mattgillooly/administrate", branch: "support-rails-5.2"
+gem "administrate-field-paperclip"
+gem "administrate-field-ckeditor", "~> 0.0.9"
 
 group :development, :test do
   gem "awesome_print"
   gem "factory_bot_rails"
   gem "faker"
   gem "pry-byebug"
-  gem "rspec-rails", '~> 3.7'
+  gem "rspec-rails"
   gem "dotenv-rails"
 end
 
