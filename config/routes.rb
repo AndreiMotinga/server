@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users
-    resources :plans
-    resources :posts
-    resources :tags
+    %i(
+      users
+      plans
+      posts
+      tags
+    ).each do |name|
+      resources name, only: %i(index show new create edit update destroy)
+    end
 
     root to: "users#index"
   end
