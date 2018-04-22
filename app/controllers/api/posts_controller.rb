@@ -1,4 +1,4 @@
-class Api::PostsController < ApplicationController
+class Api::PostsController < ApiController
   # before_action :set_post, only: [:show, :update, :destroy]
 
   # GET /posts
