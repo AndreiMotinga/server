@@ -7,6 +7,10 @@ class ApplicationController < ActionController::API
   # more https://github.com/lynndylanhurley/devise_token_auth/issues/718
   before_action :skip_cookies
 
+  def index
+    render file: "public/index.html"
+  end
+
   protected
 
   def skip_cookies

@@ -28,6 +28,9 @@
 todo
 foo
 
+# Ignore files built by client for Production
+/public
+
 ###
 #
 # See https://help.github.com/ignore-files/ for more about ignoring files.

@@ -71,7 +71,7 @@ class RecipeReviewCard extends React.Component {
           <Link to={`/posts/${4}`}>
             <CardMedia
               className={classes.media}
-              image="http://via.placeholder.com/600x600"
+              image="https://via.placeholder.com/600x600"
               title="Contemplative Reptile"
             />
           </Link>

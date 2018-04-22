@@ -89,7 +89,7 @@ class AuthDropdown extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  auth: Boolean(state.currentUser.email)
+  isSignedIn: Boolean(state.currentUser.email)
 });
 
 const mapDispatchToProps = dispatch => ({

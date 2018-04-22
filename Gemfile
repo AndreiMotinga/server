@@ -15,7 +15,7 @@ gem "paperclip"
 gem "aws-sdk", "< 3.0"
 gem "administrate", github: "mattgillooly/administrate", branch: "support-rails-5.2"
 gem "administrate-field-paperclip"
-gem "administrate-field-ckeditor", "~> 0.0.9"
+# gem "administrate-field-ckeditor", "~> 0.0.9"
 
 group :development, :test do
   gem "awesome_print"

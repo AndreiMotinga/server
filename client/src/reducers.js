@@ -8,7 +8,7 @@ import {
 } from './constants';
 
 const initialState = {
-  activeDialog: 'PlansDialog',
+  activeDialog: null,
   isLoading: false,
   errors: [],
   currentUser: {}

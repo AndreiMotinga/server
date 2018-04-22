@@ -22,7 +22,6 @@ import history from 'config/history';
  */
 class Api {
   constructor() {
-    this.baseUrl = process.env.REACT_APP_API_URL;
     this.key = process.env.REACT_APP_LOCAL_STORAGE_KEY;
   }
 
@@ -32,7 +31,7 @@ class Api {
    */
   headers() {
     const headers = localStorage.getItem(this.key);
-    return JSON.parse(headers);
+    return JSON.parse(headers) || {};
   }
 
   /**
@@ -56,7 +55,6 @@ class Api {
    * sets currentUser in store
    */
   initUser() {
-    const url = `${this.baseUrl}/auth/validate_token`;
     const headers = this.headers();
 
     return dispatch => {
@@ -67,7 +65,7 @@ class Api {
       }
 
       return axios
-        .get(url, { headers })
+        .get('/api/auth/validate_token', { headers })
         .then(res => {
           this.cycleHeaders(res.headers);
           const currentUser = res.data.data;
@@ -88,11 +86,10 @@ class Api {
    * dispatches SIGNUP_REQUEST => SIGNUP_SUCCESS || SIGNUP_FAILURE
    */
   signup(email, password) {
-    const url = `${this.baseUrl}/auth`;
     return dispatch => {
       dispatch(signupRequest());
       return axios
-        .post(url, {
+        .post('/api/auth', {
           email,
           password,
           password_confirmation: password
@@ -117,11 +114,10 @@ class Api {
    * dispatches SIGNIN_REQUEST => SIGNIN_SUCCESS || SIGNIN_FAILURE
    */
   signin(email, password) {
-    const url = `${this.baseUrl}/auth/sign_in`;
     return dispatch => {
       dispatch(signinRequest());
       return axios
-        .post(url, {
+        .post('/api/auth/sign_in', {
           email,
           password
         })
@@ -144,11 +140,10 @@ class Api {
    * dispatches SIGNOUT_REQUEST => SIGNOUT_SUCCESS || SIGNOUT_FAILURE
    */
   signout() {
-    const url = `${this.baseUrl}/auth/sign_out`;
     return dispatch => {
       dispatch(signoutRequest());
       return axios
-        .delete(url, { headers: this.headers })
+        .delete('/api/auth/sign_out', { headers: this.headers })
         .then(res => {
           this.cycleHeaders(res.headers);
           dispatch(signoutSuccess());
@@ -167,21 +162,17 @@ class Api {
    *   => SUBSCRIPTION.SUCCESS || SUBSCRIPTION.ERROR
    */
   subscribe(token, planId, period) {
-    const url = `${this.baseUrl}/subscriptions`;
     const headers = this.headers;
     return dispatch => {
       dispatch(subscribeRequest());
       return axios
-        .post(
-          url,
+        .post('/api/subscriptions',
           {
             token,
             planId,
             period
           },
-          {
-            headers
-          }
+          { headers }
         )
         .then(res => {
           this.cycleHeaders(res.headers);

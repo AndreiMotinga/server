@@ -11,9 +11,16 @@ Rails.application.routes.draw do
 
     root to: "users#index"
   end
+
   namespace :api, defaults: { format: :json }  do
     mount_devise_token_auth_for "User", at: "auth"
     resources :posts
     resources :subscriptions, only: :create
   end
+
+  get "*path", to: "application#index", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
+
+  root "application#index"
 end
