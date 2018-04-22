@@ -1,4 +1,4 @@
 class PostSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :author, :body
+  attributes :title, :body
 end
