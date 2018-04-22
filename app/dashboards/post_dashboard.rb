@@ -11,6 +11,7 @@ class PostDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     author: Field::String,
+    summary: Field::Text,
     body: Field::Ckeditor,
     tags: Field::HasMany,
     created_at: Field::DateTime,
@@ -31,7 +32,7 @@ class PostDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :author,
-    :body,
+    :summary,
     :tags,
   ].freeze
 
@@ -42,6 +43,7 @@ class PostDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :author,
+    :summary,
     :body,
     :tags,
     :created_at,
@@ -55,6 +57,7 @@ class PostDashboard < Administrate::BaseDashboard
     :image,
     :title,
     :author,
+    :summary,
     :body,
     :tags,
   ].freeze
