@@ -15,9 +15,12 @@ class PostsShow extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     axios
-      .get(`${process.env.REACT_APP_API_URL}/posts/${id}`)
+      .get(`/api/posts/${id}`)
       .then(res => {
-        this.setState({ post: res.data.data });
+        // TODO move to api and do it nicer
+        if (res.data.data) {
+          this.setState({ post: res.data.data });
+        }
       })
       .catch(err => {
         console.error(err);
