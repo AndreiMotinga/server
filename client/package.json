@@ -1,0 +1,39 @@
+{
+  "name": "crypto",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chart.js": "^2.7.2",
+    "history": "^4.7.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "prettier": "^1.11.1",
+    "react": "^16.2.0",
+    "react-chartjs-2": "^2.7.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-stripe-elements": "^1.6.0",
+    "react-swipeable-views": "^0.12.13",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -20,7 +20,38 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-todo
-foo
+
+# Ignore env config file
 .env
 
+# Ignore junk files
+todo
+foo
+
+###
+#
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+# Ignore client.
+# imported from react
+# dependencies
+#
+###
+
+/client/node_modules
+
+# testing
+/client/coverage
+
+# production
+/client/build
+
+# misc
+/client/.DS_Store
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
+/client/
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
