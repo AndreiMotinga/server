@@ -1,4 +1,4 @@
-class Api::SubscriptionsController < ApiController
+class Api::SubscriptionsController < ApplicationController
   before_action :authenticate_api_user!
 
   def create
