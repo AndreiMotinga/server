@@ -10,7 +10,7 @@ class PostDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    author: Field::String,
+    user: Field::BelongsTo,
     summary: Field::Text,
     body: Field::Ckeditor,
     tags: Field::HasMany,
@@ -31,7 +31,7 @@ class PostDashboard < Administrate::BaseDashboard
     :image,
     :id,
     :title,
-    :author,
+    :user,
     :summary,
     :tags,
   ].freeze
@@ -42,7 +42,7 @@ class PostDashboard < Administrate::BaseDashboard
     :image,
     :id,
     :title,
-    :author,
+    :user,
     :summary,
     :body,
     :tags,
@@ -56,7 +56,7 @@ class PostDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :image,
     :title,
-    :author,
+    :user,
     :summary,
     :body,
     :tags,

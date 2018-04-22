@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   belongs_to :plan, optional: true
+  has_many :posts
 
   def save_and_make_payment(plan, card_token)
     begin

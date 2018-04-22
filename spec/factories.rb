@@ -16,8 +16,10 @@ FactoryBot.define do
 
   factory :post do
     title { Faker::Lorem.sentence(1) }
-    author { Faker::Name.title }
+    summary { Faker::Lorem.paragraph(1) }
     body { Faker::Lorem.paragraph(5) }
+
+    user
   end
 
   factory :user do
